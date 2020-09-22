@@ -4,6 +4,7 @@
    <Head></Head>
    <Nav></Nav>
     <Swiper></Swiper>
+      <Tabs></Tabs>
   </div>
 
 </template>
@@ -12,6 +13,7 @@ import HelloWorld from '@/components/HelloWorld.vue'
 import Head from '@/components/Head.vue'
 import Nav from '@/components/Nav.vue'
 import Swiper from '@/components/Swiper.vue'
+import Tabs from '@/components/Tabs.vue'
 
 export default {
   name: 'Home',
@@ -19,7 +21,8 @@ export default {
     HelloWorld,
     Head,
     Nav,
-    Swiper
+    Swiper,
+    Tabs
   }
 }
 </script>

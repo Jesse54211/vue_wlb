@@ -60,7 +60,7 @@
     .recommendPage .swiper-container{
         position: relative;
         width: 100%;
-        height: 400px;
+        height: 360px;
         background: pink;
     }
     .recommendPage .swiper-container .swiper-slide{
