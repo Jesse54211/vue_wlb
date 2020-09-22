@@ -4,7 +4,7 @@
   <div class="head">
 	<a href=""><div class="title">外联帮</div></a>
 	<a href=""><div class="find">发现</div></a>
-	<el-input class="input" v-model="input"  placeholder="请输入内容"></el-input>
+	<el-input class="input" v-model="input_search"  placeholder="请输入内容"></el-input>
 	<el-button class="btn_smt" >搜索</el-button>
 	<div class="right">
 		<a @click="dialogVisible=true">发布活动</a>
@@ -18,9 +18,9 @@
 			  :before-close="handleClose">
 
 
-		  <el-input v-model="input" placeholder="请输入账号"></el-input>
+		  <el-input v-model="input_user" placeholder="请输入账号"></el-input>
 		  <div style="padding-top: 10px"> </div>
-		  <el-input placeholder="请输入密码" v-model="input" show-password></el-input>
+		  <el-input placeholder="请输入密码" v-model="input_passwd" show-password></el-input>
 
 
 		  <span slot="footer" class="dialog-footer">
@@ -42,7 +42,9 @@ export default {
   },
     data() {
     return {
-      input_search: '',
+		input_search: '',
+		input_user:'',
+		input_passwd:'',
 		dialogVisible: false
     }
   },
