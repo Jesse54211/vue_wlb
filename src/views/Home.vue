@@ -2,21 +2,24 @@
   <div class="home">
    <HelloWorld></HelloWorld>
    <Head></Head>
+   <Nav></Nav>
+    <Swiper></Swiper>
   </div>
 
-
 </template>
-
 <script>
-// @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
 import Head from '@/components/Head.vue'
+import Nav from '@/components/Nav.vue'
+import Swiper from '@/components/Swiper.vue'
 
 export default {
   name: 'Home',
   components: {
     HelloWorld,
-    Head
+    Head,
+    Nav,
+    Swiper
   }
 }
 </script>
