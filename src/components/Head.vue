@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
 <div>
   <div class="head">
@@ -6,10 +7,28 @@
 	<el-input class="input" v-model="input"  placeholder="请输入内容"></el-input>
 	<el-button class="btn_smt" >搜索</el-button>
 	<div class="right">
-		<a href="">发布活动</a>
-		<a href="">登入</a>
-		<a href="">注册</a>
+		<a @click="dialogVisible=true">发布活动</a>
+		<a @click="dialogVisible=true">登入</a>
+		<a @click="dialogVisible=true">注册</a>
 	</div>
+	  <el-dialog
+			  title="登录"
+			  :visible.sync="dialogVisible"
+			  width="30%"
+			  :before-close="handleClose">
+
+
+		  <el-input v-model="input" placeholder="请输入账号"></el-input>
+		  <div style="padding-top: 10px"> </div>
+		  <el-input placeholder="请输入密码" v-model="input" show-password></el-input>
+
+
+		  <span slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible = false">取 消</el-button>
+        <el-button type="primary" @click="dialogVisible = false">登 录</el-button>
+        </span>
+	  </el-dialog>
+
   </div>
 </div>
 </template>
@@ -23,9 +42,19 @@ export default {
   },
     data() {
     return {
-      input: ''
+      input_search: '',
+		dialogVisible: false
     }
-  }
+  },
+	methods: {
+		handleClose(done) {
+			this.$confirm('确认关闭？')
+					.then(_=> {
+						done();
+					})
+					.catch(_=> {});
+		}
+	}
 }
 </script>
 <style scoped>
@@ -76,5 +105,7 @@ export default {
 	color:white;
 	margin-right:30px;
 	font-size:15px;
+	cursor:pointer
 }
+
 </style>
