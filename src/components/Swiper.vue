@@ -61,7 +61,7 @@
         position: relative;
         width: 100%;
         height: 360px;
-        background: pink;
+        /*background: pink;*/
     }
     .recommendPage .swiper-container .swiper-slide{
         width: 100%;
