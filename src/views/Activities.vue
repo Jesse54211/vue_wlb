@@ -21,7 +21,20 @@ export default {
         Head
 
     },
+    methods:{
+        async getDetails(){
+            this.axios.get('http://localhost'+'/question/'+this.$route.params.id,{
+            }).then(res => {
+                this.res=res.data
+                // let indexActData = res.data.extend.page.list
+                console.log(res)
+                // this.indexActData = indexActData
+            })
+        }
+
+    },
     created() {
+        this.getDetails()
     }
 
 }
