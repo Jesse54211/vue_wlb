@@ -29,7 +29,7 @@
 				  <el-switch v-model="form.delivery"></el-switch>
 			  </el-form-item>
 			  <el-form-item>
-				  <el-button type="primary" @click="onSubmit">立即创建</el-button>
+				  <el-button type="primary" @click="ToLogin">登 录</el-button>
 				  <el-button @click="dialogVisible_login = false">取 消</el-button>
 			  </el-form-item>
 		  </el-form>
@@ -154,9 +154,16 @@ export default {
 					})
 					.catch(_=> {});
 		},
-		onSubmit() {
-			console.log('submit!');
-		},
+			async ToLogin(){
+				var params = new URLSearchParams();
+				params.append('username', this.form.login_user);
+				params.append('password', this.form.login_passwd);
+				this.axios.post('http://localhost/login',params).then(res => {
+					this.res=res.data
+					console.log(res)
+				})
+
+			},
 		submitForm(formName) {
 			this.$refs[formName].validate((valid) => {
 				if (valid) {

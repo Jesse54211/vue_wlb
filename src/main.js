@@ -18,6 +18,9 @@ Vue.config.productionTip = false
 Vue.prototype.GlobalUrl = function(url){
   return "http://localhost:80"+url
 }
+Vue.prototype.ActUrl = function(url){
+  return "http://localhost:80/question/"+url
+}
 
 new Vue({
   router,

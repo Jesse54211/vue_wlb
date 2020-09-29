@@ -4,17 +4,17 @@
         <el-tabs v-model="activeName" type="card" @tab-click="handleClick">
             <el-tab-pane label="全部活动" name="first">
 <!--                全部活动-->
-
                     <div class="showdata" v-for="item in indexActData">
                         <img :src="GlobalUrl(item.aimgurl)" width="255" height="150">
                         <br>
-                        <a href="">{{ item.title }}</a>
+                        <a @click="go" >{{ item.title }}</a>
+                        <br>
+                        <router-link :to="{name:'Activities', params: {id:item.id}}">测试传递</router-link>
 
                         <br><div class="tag">{{ item.tag }}</div>
                         <div class="time">发布于 {{ item.showTime }}</div>
                         <div style="color: green" class="time">预算 {{ item.abudget }}</div>
                     </div>
-
 
             </el-tab-pane>
             <el-tab-pane label="点赞最多" name="second">点赞最多</el-tab-pane>
@@ -42,6 +42,9 @@
         methods: {
             handleClick(tab, event) {
                 console.log(tab, event);
+            },
+            go(){
+                this.$router.push('/Activities')
             }
         }
     };
@@ -51,15 +54,13 @@
     width:1000px;
     padding-top: 20px;
     padding-left: 100px;
-    float: left;
-}
+    float: left;}
 .right{
     width: 200px;
     height: 800px;
     background-color: #62b651;
     float: left;
-    padding-top: 80px;
-}
+    padding-top: 80px;}
 .showdata{
     width: 300px;
     height: 255px;
