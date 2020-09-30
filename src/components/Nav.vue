@@ -1,4 +1,5 @@
 <template>
+        <div class="center">
         <div class="nav">
                 <el-menu
                 :default-active="activeIndex2"
@@ -20,10 +21,19 @@
                 <el-menu-item index="10">其他</el-menu-item>
                 </el-menu>
         </div>
+        </div>
 </template>
 
 <style scoped>
-.nav{
-    padding-left: 100px;
+.center{
+        height: 50px;
+        width: 1300px;
+        /*background-color:#62b651;*/
+margin: 0 auto;
 }
+.nav{
+/*margin: 0 auto;*/
+    padding-left: 30px;
+}
+
 </style>

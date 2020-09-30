@@ -1,6 +1,7 @@
 /* eslint-disable */
 <template>
 <div>
+	<div class="center" >
   <div class="head">
 	<a href=""><div class="title">外联帮</div></a>
 	<a href=""><div class="find">发现</div></a>
@@ -72,6 +73,7 @@
 		  </el-form>
 	  </el-dialog>
   </div>
+</div>
 </div>
 </template>
 
@@ -182,10 +184,15 @@ export default {
 }
 </script>
 <style scoped>
+.center{
+	height: 50px;
+	width: 100%;
+	background-color:#62b651;
+}
 .head{
 	height:50px;
-	width:100%;
-	background-color:#62b651;
+	width:1300px;
+	margin: 0 auto;
 }
 .title{
 	height:50px;

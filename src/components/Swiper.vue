@@ -1,4 +1,5 @@
 <template>
+    <div class="center">
     <div class="recommendPage">
         <swiper :options="swiperOption" ref="mySwiper">
             <swiper-slide></swiper-slide>
@@ -8,6 +9,7 @@
             <div class="swiper-button-prev" slot="button-prev"></div>
             <div class="swiper-button-next" slot="button-next"></div>
         </swiper>
+    </div>
     </div>
 </template>
 
@@ -57,11 +59,15 @@
     };
 </script>
 <style scoped >
+    .center{
+        width:1300px;
+        padding-top: 20px;
+        margin: 0 auto;
+    }
     .recommendPage .swiper-container{
         position: relative;
         width: 100%;
         height: 360px;
-        /*background: pink;*/
     }
     .recommendPage .swiper-container .swiper-slide{
         width: 100%;
@@ -72,6 +78,7 @@
         color: #000;
         font-size: 16px;
         text-align: center;
+        border-radius:15px;
     }
 </style>
 
