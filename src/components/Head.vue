@@ -8,7 +8,7 @@
 	<el-input class="input" v-model="input_search"  placeholder="请输入内容"></el-input>
 	<el-button class="btn_smt">搜索</el-button>
 	<div class="right">
-		<a>发布活动</a>
+		<a @click="gopublish">发布活动</a>
 		<a @click="dialogVisible_login=true">登入</a>
 		<a @click="dialogVisible_register=true">注册</a>
 	</div>
@@ -178,6 +178,9 @@ export default {
 		},
 		resetForm(formName) {
 			this.$refs[formName].resetFields();
+		},
+		gopublish(){
+			this.$router.push('/publish')
 		}
 	}
 
